@@ -17,23 +17,24 @@
 
 .container .header {
     width: 100%;
-    height: 90px;
+    height: 7vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
-
-.container .header .logo01 {
-    width: auto;
-    height: 60px;
-    margin-left: 30px;
+.header .logo {
+    display: flex;
 }
-.container .header .logo02 {
-    width: auto;
-    height: 60px;
+.header .logo h1 {
+    border-bottom: 2px solid rgb(196, 120, 49);
 }
-
+.header .logo span {
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(196, 120, 49);
+}
 
 .container .header .navbar {
     width:50%;
@@ -44,14 +45,104 @@
     justify-content: center;
     list-style: none;
 }
+   
+
 .container .header .navbar a {
     margin: 0px 10px;
     color: #fff;
+    padding: 6px;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
+    position: relative;
+    transform: 1ms ease-in;
 }
-.container .header .navbar a img {
-    width: auto;
-    height: 30px;
+.container .header .navbar a:before {
+    content: ' ';
+    height: 1px;
+    position: absolute;
+    width: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #fff;
+    transition: all .6s ease;
+}
+.container .header .navbar a:hover:before {
+    width: 100%;
+}
+
+
+.container .header .navbar a ion-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+main {
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content h1 {
+    width: 850px;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+main .content h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+}
+
+main .content .botao {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+main .content .botao button {
+    width: 250px;
+    height: 60px;
+    padding: 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 1px solid white;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(27, 26, 26, 0.37);
+    border-radius: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 1.5s;
+}
+main .content .botao button:hover {
+    color: yellow;
+}
+main .content .botao button:before {
+    content: '';
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 0px;
+    height: 60px;
+    background-color: rgb(61, 61, 61,0.37);
+    z-index: 1; /*Para o efeito ficar pa parte de tras*/
+    transition: all 1s ease;
+}
+main .content .botao button:hover:before {
+    width: 100%;
 }
